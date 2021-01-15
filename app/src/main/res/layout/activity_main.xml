@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_base"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    android:foregroundTintMode="screen"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_btn_pilihan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_gunting"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ic_gunting"
+            android:backgroundTint="#6980C5"
+            android:backgroundTintMode="screen"
+            android:onClick="onClickGunting"
+            android:tag="Gunting" />
+
+        <Button
+            android:id="@+id/btn_batu"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_batu"
+            android:backgroundTint="#A65454"
+            android:backgroundTintMode="screen"
+            android:onClick="onClickBatu"
+            android:tag="Batu" />
+
+        <Button
+            android:id="@+id/btn_kertas"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_kertas"
+            android:backgroundTint="#68A846"
+            android:backgroundTintMode="screen"
+            android:onClick="onClickKertas"
+            android:tag="Kertas" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_pilihanLawan"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:backgroundTintMode="screen"
+            android:contentDescription="TODO"
+            android:tintMode="screen"
+            tools:srcCompat="@drawable/ic_batu" />
+
+        <TextView
+            android:id="@+id/text_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="VS"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/img_pilihanPemain"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:backgroundTintMode="screen"
+            android:contentDescription="TODO"
+            android:foregroundTintMode="screen"
+            tools:srcCompat="@drawable/ic_gunting" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_instruksi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Menang"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/papanSkor_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text_skor2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="Skor Anda"
+            android:textAlignment="center"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/text_skor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/btn_restart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/restart_style"
+            android:onClick="onClickRestart"
+            android:text="Restart"
+            android:textAlignment="center"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/btn_to_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/restart_style"
+            android:backgroundTint="#7DED54"
+            android:backgroundTintMode="src_over"
+            android:onClick="onClickToHome"
+            android:text="Home"
+            android:textAlignment="center"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/restart_style"
+            android:backgroundTint="#ED5454"
+            android:backgroundTintMode="src_over"
+            android:onClick="onClickExit"
+            android:text="Exit"
+            android:textAlignment="center"
+            android:textSize="8sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/papanWaktu_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text_waktuLabel"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="Waktu"
+            android:textAlignment="center"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/text_waktu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="30"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_roundTimer"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="50"
+        android:progressTint="#FF0C0C"
+        app:layout_constraintBottom_toTopOf="@+id/layout_btn_pilihan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
